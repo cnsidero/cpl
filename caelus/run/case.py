@@ -322,7 +322,7 @@ class CMLSimulation(JSONSerializer):
 
     def _run_solver(self, sopts):
         """Helper method to run the solver"""
-        dep_job_id = self.job_ids[-1] if self.job_ids else None
+        dep_job_id = [self.job_ids[-1]] if self.job_ids else None
         self.solver = sopts["solver"]
         log_file = sopts.get("log_file", None)
         if log_file is not None:
